@@ -1,0 +1,14 @@
+{
+  "name": "kartik-portfolio",
+  "version": "1.0.0",
+  "description": "This is kartik's portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kartik singh",
+  "license": "ISC",
+  "dependencies": {
+    "kartik-portfolio": "file:"
+  }
+}

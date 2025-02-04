@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+/* Gradient overlay */
+.gradient-overlay {
+  background: radial-gradient(
+    circle at 0 0,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(59, 130, 246, 0.1) 25%,
+    rgba(59, 130, 246, 0.05) 50%,
+    transparent 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  pointer-events: none;
+}
+
+/* Neon text effect */
+.neon-text {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5),
+               0 0 20px rgba(59, 130, 246, 0.3),
+               0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+/* Neon button effect */
+.neon-button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  z-index: -1;
+  border-radius: 0.5rem;
+  filter: blur(8px);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.neon-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(59, 130, 246, 0.1);
+  z-index: -1;
+  border-radius: 0.375rem;
+}
+
+.neon-button:hover::before {
+  opacity: 1;
+}
+
+.neon-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Animated text */
+.animated-text {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-text span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: textChange 6s infinite;
+  opacity: 0;
+}
+
+.animated-text span:first-child {
+  position: relative;
+  animation-delay: 0s;
+}
+
+.animated-text span:last-child {
+  animation-delay: 3s;
+}
+
+@keyframes textChange {
+  0%, 45% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50%, 95% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar neon effect */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::before {
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5),
+              inset 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
